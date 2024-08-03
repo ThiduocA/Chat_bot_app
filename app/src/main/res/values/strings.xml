@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">chat_bot_app</string>
+    <string name="header_introduce">You AI Assistant</string>
+    <string name="paragraph">Using this software, you can ask you questions and receive articles using artificial intelligence assistant</string>
 </resources>
