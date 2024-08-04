@@ -1,9 +1,8 @@
-package com.example.chat_bot_app;
+package com.example.chat_bot_app.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,25 +10,27 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class IntroduceActivity extends AppCompatActivity {
-private Button btn_continue;
+import com.example.chat_bot_app.R;
+
+public class SplashActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_introduce);
+        setContentView(R.layout.activity_splash);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btn_continue = findViewById(R.id.button);
-        btn_continue.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(IntroduceActivity.this, MainActivity.class);
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, IntroduceActivity.class);
                 startActivity(intent);
+                finish();
             }
-        });
+        }, 2000);
     }
 }

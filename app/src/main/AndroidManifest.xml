@@ -13,13 +13,13 @@
         android:theme="@style/Theme.Chat_bot_app"
         tools:targetApi="31">
         <activity
-            android:name=".IntroduceActivity"
+            android:name=".Activities.IntroduceActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
